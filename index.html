@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Topaz">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1E1E22">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230a0d0c'/%3E%3Cg%20transform='translate(32%2032)%20scale(1.12)%20translate(-24%20-24.5)'%3E%3Cpolygon%20points='12,6%204,18%2017,18'%20fill='%231f9d78'/%3E%3Cpolygon%20points='12,6%2017,18%2024,6'%20fill='%2334d399'/%3E%3Cpolygon%20points='24,6%2017,18%2031,18'%20fill='%2386efcf'/%3E%3Cpolygon%20points='24,6%2031,18%2036,6'%20fill='%232dd4bf'/%3E%3Cpolygon%20points='36,6%2031,18%2044,18'%20fill='%230e9aa7'/%3E%3Cpolygon%20points='4,18%2017,18%2024,43'%20fill='%230f766e'/%3E%3Cpolygon%20points='17,18%2031,18%2024,43'%20fill='%2319b7a0'/%3E%3Cpolygon%20points='31,18%2044,18%2024,43'%20fill='%230e7490'/%3E%3Cpolygon%20points='12,6%2036,6%2044,18%2024,43%204,18'%20fill='none'%20stroke='%23bff5e0'%20stroke-width='1.1'%20stroke-linejoin='round'/%3E%3Cpath%20d='M4%2018H44M12%206L17%2018L24%206L31%2018L36%206M17%2018L24%2043L31%2018'%20fill='none'%20stroke='%23bff5e0'%20stroke-width='.8'%20stroke-linejoin='round'%20stroke-linecap='round'%20opacity='.85'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
   <title>Topaz Finance</title>
   <style>
     :root {
@@ -188,6 +194,16 @@
     .bottom-nav .nav-btn { font-size: 18px; }
     .bottom-nav .nav-btn span { font-size: 10px; }
 
+
+    /* ===== Ajustes: área segura (status bar translúcida), cards clicáveis, sobra ===== */
+    header { padding-top: calc(20px + env(safe-area-inset-top)); }
+    nav.bottom-nav { padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
+    .metric-item { cursor: pointer; transition: transform .1s, filter .15s; -webkit-tap-highlight-color: transparent; }
+    .metric-item:hover { filter: brightness(1.12); }
+    .metric-item:active { transform: scale(.97); }
+    .metric-item:focus-visible { outline: 2px solid rgba(255,255,255,.5); outline-offset: 2px; }
+    .btn-sobra { margin-top: 12px; background: linear-gradient(90deg, #06b6d4, #34d399); color: #04201a; font-weight: 700; }
+    .reserve-card { border-color: rgba(45,212,191,.35); background: linear-gradient(135deg, rgba(45,212,191,.10), rgba(6,182,212,.04)); }
   </style>
 </head>
 <body>
@@ -243,9 +259,9 @@
       </div>
 
       <div class="sub-metrics">
-        <div class="metric-item m50"><span>Fixos (50%)<br>gasto / meta</span><strong id="valFixoPct">R$ 0 / R$ 0</strong></div>
-        <div class="metric-item m35"><span>Lazer / Cartão (35%)<br>gasto / meta</span><strong id="valCartaoPct">R$ 0 / R$ 0</strong></div>
-        <div class="metric-item m15"><span>Reserva / Metas (15%)<br>guardado / meta</span><strong id="valReservaPct">R$ 0 / R$ 0</strong></div>
+        <div class="metric-item m50" role="button" tabindex="0" onclick="switchTab('tab-fixos')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><span>Fixos (50%)<br>gasto / meta</span><strong id="valFixoPct">R$ 0 / R$ 0</strong></div>
+        <div class="metric-item m35" role="button" tabindex="0" onclick="switchTab('tab-gastos')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><span>Lazer / Cartão (35%)<br>gasto / meta</span><strong id="valCartaoPct">R$ 0 / R$ 0</strong></div>
+        <div class="metric-item m15" role="button" tabindex="0" onclick="switchTab('tab-metas')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><span>Reserva / Metas (15%)<br>guardado / meta</span><strong id="valReservaPct">R$ 0 / R$ 0</strong></div>
       </div>
     </div>
   </header>
@@ -265,7 +281,7 @@
     <div id="tab-receitas" class="tab-content">
       <div class="card">
         <div class="card-title">Adicionar Nova Receita</div>
-        <input type="text" id="incDesc" placeholder="Descrição (ex: Salário, Reembolso)">
+        <input type="text" id="incDesc" placeholder="Descrição (ex: Salário, Freelance, Venda de Item)">
         <input type="text" inputmode="numeric" id="incVal" placeholder="Valor (R$)" oninput="maskMoney(this)">
         <select id="incType">
           <option value="fixo">Receita Recorrente (Todo mês)</option>
@@ -283,12 +299,12 @@
     <div id="tab-fixos" class="tab-content">
       <div class="card">
         <div class="card-title">Cadastrar Gasto Fixo</div>
-        <input type="text" id="expDesc" placeholder="Descrição (ex: Moto, Faculdade, Netflix)">
+        <input type="text" id="expDesc" placeholder="Descrição (ex: Aluguel / Condomínio, Conta de Energia, Plano de Internet, Assinatura de Streaming, Curso / Faculdade)">
         <input type="text" inputmode="numeric" id="expVal" placeholder="Valor (R$)" oninput="maskMoney(this)">
         <select id="expCategory">
-          <option value="fixo">Fixos Essenciais (Moto, Ração, IPTU)</option>
-          <option value="edu">Educação (Faculdade, Solda)</option>
-          <option value="cartao">Cartão de Crédito / Lazer</option>
+          <option value="fixo">Essenciais (Aluguel / Condomínio, Energia, Internet)</option>
+          <option value="edu">Educação (Curso / Faculdade)</option>
+          <option value="cartao">Pago no Cartão de Crédito (entra na fatura)</option>
         </select>
         <input type="number" id="expInstallments" placeholder="Nº de parcelas (opcional — em branco = recorrente)" min="1">
         <label class="field-label" for="expStart">Mês de início</label>
@@ -306,7 +322,7 @@
     <div id="tab-gastos" class="tab-content">
       <div class="card">
         <div class="card-title">Lançar Gasto</div>
-        <input type="text" id="purDesc" placeholder="Descrição (ex: Jaqueta, Mercado)">
+        <input type="text" id="purDesc" placeholder="Descrição (ex: Supermercado, Farmácia, Combustível, Restaurante / Lanche)">
         <input type="text" inputmode="numeric" id="purVal" placeholder="Valor total da compra (R$)" oninput="maskMoney(this); updatePurchaseHint();">
         <label class="field-label" for="purDate">Data da compra</label>
         <input type="date" id="purDate" onchange="updatePurchaseHint()">
@@ -386,7 +402,7 @@
       <div class="card">
         <div class="card-title">Simular Novo Parcelamento</div>
         <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Veja se o saldo do mês suporta a compra sem ficar negativo.</p>
-        <input type="text" id="simDesc" placeholder="Nome do item (ex: Jaqueta Moto)">
+        <input type="text" id="simDesc" placeholder="Nome do item (ex: Celular, Eletrodoméstico, Viagem)">
         <input type="text" inputmode="numeric" id="simTotal" placeholder="Valor total da compra (R$)" oninput="maskMoney(this)">
         <input type="number" id="simParcelas" placeholder="Número de parcelas (ex: 6)" min="1">
         <button class="btn" onclick="runSimulation()">Verificar Viabilidade</button>
@@ -417,9 +433,10 @@
 
     <!-- METAS -->
     <div id="tab-metas" class="tab-content">
+      <div class="card reserve-card" id="reserveBox"></div>
       <div class="card">
         <div class="card-title">🎯 Adicionar Nova Meta</div>
-        <input type="text" id="metaName" placeholder="Nome da meta (ex: Entrada da Casa)">
+        <input type="text" id="metaName" placeholder="Nome da meta (ex: Reserva de Emergência, Viagem, Troca de Veículo)">
         <input type="text" inputmode="numeric" id="metaTarget" placeholder="Valor alvo (R$)" oninput="maskMoney(this)">
         <button class="btn" onclick="addMeta()">+ Criar Meta</button>
       </div>
@@ -507,7 +524,8 @@
 
     // ===== Utilitários =====
     const MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-    const CAT_LABEL = { fixo: 'Fixos', edu: 'Educação', cartao: 'Cartão/Lazer' };
+    const CAT_LABEL = { fixo: 'Essencial', edu: 'Educação', cartao: 'Cartão' };
+    function round2(x) { return Math.round(x * 100) / 100; }
     function pad(n) { return String(n).padStart(2, '0'); }
     function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
     function fmt(v) { return Number(v || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
@@ -569,19 +587,14 @@
 
     function computeMonth(ym) {
       const income = appState.incomes.filter(i => incomeActive(i, ym)).reduce((a, i) => a + i.val, 0);
-      let fixos = 0, edu = 0, cartaoFix = 0;
-      appState.expenses.filter(e => expenseActive(e, ym)).forEach(e => {
-        if (e.cat === 'edu') edu += e.val;
-        else if (e.cat === 'cartao') cartaoFix += e.val;
-        else fixos += e.val;
-      });
-      const purchases = appState.purchases.filter(p => p.targetMonth === ym).reduce((a, p) => a + p.val, 0);
-      const lazer = cartaoFix + purchases;
-      const fixosBucket = fixos + edu;
+      // Todo gasto recorrente/parcelado cadastrado em Fixos (essencial, educação ou cartão) conta nos 50%
+      const fixosBucket = appState.expenses.filter(e => expenseActive(e, ym)).reduce((a, e) => a + e.val, 0);
+      const lazer = appState.purchases.filter(p => p.targetMonth === ym).reduce((a, p) => a + p.val, 0);
       const reservado = reservedInMonth(ym);
+      const transferido = appState.incomes.filter(i => i.transferFrom === ym).reduce((a, i) => a + i.val, 0);
       return {
-        income, fixos, edu, lazer, fixosBucket, reservado,
-        balance: income - fixosBucket - lazer - reservado,
+        income, fixosBucket, lazer, reservado, transferido,
+        balance: round2(income - fixosBucket - lazer - reservado - transferido),
         t50: income * 0.5, t35: income * 0.35, t15: income * 0.15
       };
     }
@@ -692,7 +705,7 @@
       openModal('Editar gasto fixo',
         field('Descrição', `<input type="text" id="m_desc" value="${esc(e.desc)}">`) +
         field('Valor', moneyInput('m_val', e.val)) +
-        field('Categoria', `<select id="m_cat">${opt('fixo', 'Fixos Essenciais')}${opt('edu', 'Educação')}${opt('cartao', 'Cartão de Crédito / Lazer')}</select>`) +
+        field('Categoria', `<select id="m_cat">${opt('fixo', 'Essenciais (Aluguel / Condomínio, Energia, Internet)')}${opt('edu', 'Educação (Curso / Faculdade)')}${opt('cartao', 'Pago no Cartão de Crédito (entra na fatura)')}</select>`) +
         field('Nº de parcelas (em branco = recorrente)', `<input type="number" id="m_inst" min="1" value="${e.inst || ''}">`) +
         field('Mês de início', `<input type="month" id="m_start" value="${e.start}">`) +
         field('Encerrar em (opcional)', `<input type="month" id="m_end" value="${e.end || ''}">`) +
@@ -847,7 +860,33 @@
           saveState(); updateCalculations();
         });
     }
+    function renderReserve() {
+      const c = computeMonth(viewMonth), falta = round2(Math.max(0, c.t15 - c.reservado));
+      let html = `<div class="card-title">🎯 Reserva do mês (15%)</div>
+        <p class="hint">15% da receita de ${monthLabel(viewMonth)}: <strong>${fmt(c.t15)}</strong> · guardado no mês: ${fmt(c.reservado)}</p>`;
+      if (!(c.t15 > 0)) html += '<div class="empty">Cadastre uma receita neste mês para calcular os 15%.</div>';
+      else if (falta <= 0.004) html += '<div class="empty">✅ A reserva de 15% deste mês já foi atingida.</div>';
+      else html += `<button class="btn" onclick="reserveFifteen()">＋ Guardar / Reservar ${fmt(falta)} (15%)</button>`;
+      $('reserveBox').innerHTML = html;
+    }
+    function reserveFifteen() {
+      const c = computeMonth(viewMonth), falta = round2(Math.max(0, c.t15 - c.reservado));
+      if (falta <= 0.004) return;
+      if (!appState.metas.length) { alert('Crie uma meta primeiro (formulário logo abaixo) para guardar a reserva dos 15%.'); return; }
+      const opts = appState.metas.map(m => `<option value="${m.id}">${esc(m.name)}</option>`).join('');
+      openModal('Reservar 15% — ' + monthLabel(viewMonth),
+        field('Meta de destino', `<select id="m_meta">${opts}</select>`) +
+        field('Valor a reservar', moneyInput('m_amount', falta)) +
+        '<p class="hint">Sugestão: o que falta para completar 15% da receita do mês. Você pode ajustar o valor.</p>',
+        () => {
+          const v = parseMoney($('m_amount').value), m = appState.metas.find(x => x.id === $('m_meta').value);
+          if (!m || !(v > 0)) { alert('Escolha a meta e informe um valor maior que zero.'); return false; }
+          m.deposits.push({ id: uid(), month: viewMonth, amount: v });
+          saveState(); updateCalculations();
+        });
+    }
     function renderMetas() {
+      renderReserve();
       const el = $('metaList');
       if (!appState.metas.length) { el.innerHTML = '<div class="empty">Nenhuma meta criada ainda. Use o formulário acima.</div>'; return; }
       el.innerHTML = appState.metas.map(m => {
@@ -972,7 +1011,7 @@
       return (extra || '') + `<button class="icon-btn" onclick="editItem('${list}','${id}')" aria-label="Editar">${PENCIL}</button><button class="icon-btn" onclick="removeItem('${list}','${id}')" aria-label="Excluir">✕</button>`;
     }
     function incomeSub(i) {
-      return i.type === 'temp' ? 'Pontual · ' + shortMonth(i.month) : 'Recorrente desde ' + shortMonth(i.start) + (i.end ? ' · encerrada em ' + shortMonth(i.end) : '');
+      return i.transferFrom ? 'Sobra de ' + shortMonth(i.transferFrom) + ' · pontual em ' + shortMonth(i.month) : i.type === 'temp' ? 'Pontual · ' + shortMonth(i.month) : 'Recorrente desde ' + shortMonth(i.start) + (i.end ? ' · encerrada em ' + shortMonth(i.end) : '');
     }
     function expenseSub(e, ym) {
       const act = expenseActive(e, ym);
@@ -990,7 +1029,7 @@
       if (!appState.incomes.length) { el.innerHTML = '<div class="empty">Nenhuma receita cadastrada.</div>'; return; }
       el.innerHTML = appState.incomes.map(i => {
         const endBtn = (i.type !== 'temp' && !i.end) ? `<button class="link-btn" onclick="endItem('incomes','${i.id}')">Encerrar</button>` : '';
-        return `<div class="list-row"><div class="list-info"><strong>${esc(i.desc)}${i.type === 'temp' ? '<span class="tag warn">⚡ Extra do mês</span>' : ''}</strong><span>${incomeSub(i)}</span></div><div class="list-val">${fmt(i.val)}</div>${rowButtons('incomes', i.id, endBtn)}</div>`;
+        return `<div class="list-row"><div class="list-info"><strong>${esc(i.desc)}${i.transferFrom ? '<span class="tag ok">↪ Sobra transferida</span>' : i.type === 'temp' ? '<span class="tag warn">⚡ Extra do mês</span>' : ''}</strong><span>${incomeSub(i)}</span></div><div class="list-val">${fmt(i.val)}</div>${rowButtons('incomes', i.id, endBtn)}</div>`;
       }).join('');
     }
     function renderExpenseList() {
@@ -1010,9 +1049,20 @@
     }
     function renderSummary(c) {
       const inv = invoiceInfo(viewMonth);
-      const rows = [['Receitas do mês', fmt(c.income)], ['Fixos + Educação', fmt(c.fixosBucket)], ['Lazer / Cartão', fmt(c.lazer)],
-                    ['Guardado em metas', fmt(c.reservado)], ['Fatura do cartão pendente', fmt(inv.pending)], ['Saldo do mês', fmt(c.balance)]];
-      $('summaryRows').innerHTML = rows.map(r => `<div class="list-row"><div class="list-info"><strong style="font-weight:500;">${r[0]}</strong></div><div class="list-val">${r[1]}</div></div>`).join('');
+      const rows = [['Receitas do mês', fmt(c.income)], ['Gastos fixos', fmt(c.fixosBucket)], ['Lazer / Cartão (gastos)', fmt(c.lazer)], ['Guardado em metas', fmt(c.reservado)]];
+      if (c.transferido > 0) rows.push(['Sobra transferida p/ o próximo mês', fmt(c.transferido)]);
+      rows.push(['Fatura do cartão pendente', fmt(inv.pending)], ['Saldo do mês', fmt(c.balance)]);
+      let html = rows.map(r => `<div class="list-row"><div class="list-info"><strong style="font-weight:500;">${r[0]}</strong></div><div class="list-val">${r[1]}</div></div>`).join('');
+      if (c.balance > 0.004) html += `<button class="btn btn-sobra" onclick="transferSurplus()">🚀 Transferir Sobra (${fmt(c.balance)}) para o Próximo Mês</button>`;
+      $('summaryRows').innerHTML = html;
+    }
+    function transferSurplus() {
+      const amount = computeMonth(viewMonth).balance;
+      if (!(amount > 0.004)) return;
+      const next = addMonths(viewMonth, 1);
+      if (!confirm('Transferir ' + fmt(amount) + ' de ' + monthLabel(viewMonth) + ' para ' + monthLabel(next) + ' como receita pontual?')) return;
+      appState.incomes.push({ id: uid(), desc: 'Sobra de ' + monthLabel(viewMonth), val: amount, type: 'temp', month: next, transferFrom: viewMonth });
+      saveState(); updateCalculations();
     }
 
     // ===== Buscar =====
