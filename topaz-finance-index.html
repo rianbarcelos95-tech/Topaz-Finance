@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Topaz">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1E1E22">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230a0d0c'/%3E%3Cg%20transform='translate(32%2032)%20scale(1.12)%20translate(-24%20-24.5)'%3E%3Cpolygon%20points='12,6%204,18%2017,18'%20fill='%231f9d78'/%3E%3Cpolygon%20points='12,6%2017,18%2024,6'%20fill='%2334d399'/%3E%3Cpolygon%20points='24,6%2017,18%2031,18'%20fill='%2386efcf'/%3E%3Cpolygon%20points='24,6%2031,18%2036,6'%20fill='%232dd4bf'/%3E%3Cpolygon%20points='36,6%2031,18%2044,18'%20fill='%230e9aa7'/%3E%3Cpolygon%20points='4,18%2017,18%2024,43'%20fill='%230f766e'/%3E%3Cpolygon%20points='17,18%2031,18%2024,43'%20fill='%2319b7a0'/%3E%3Cpolygon%20points='31,18%2044,18%2024,43'%20fill='%230e7490'/%3E%3Cpolygon%20points='12,6%2036,6%2044,18%2024,43%204,18'%20fill='none'%20stroke='%23bff5e0'%20stroke-width='1.1'%20stroke-linejoin='round'/%3E%3Cpath%20d='M4%2018H44M12%206L17%2018L24%206L31%2018L36%206M17%2018L24%2043L31%2018'%20fill='none'%20stroke='%23bff5e0'%20stroke-width='.8'%20stroke-linejoin='round'%20stroke-linecap='round'%20opacity='.85'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+  <title>Topaz Finance</title>
+  <style>
+    :root {
+      --bg-dark: #121214;
+      --card-bg: #1E1E22;
+      --border-color: #2D2D35;
+      --accent-blue: #3B82F6;
+      --accent-purple: #8B5CF6;
+      --text-main: #EDEDF0;
+      --text-muted: #8E8E93;
+      --success: #06B6D4;
+      --danger: #EF4444;
+      --warning: #F97316;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-main); display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 70px; }
+
+    /* Header & Saldo Centralizado */
+    header { background: var(--card-bg); padding: 20px; border-bottom: 1px solid var(--border-color); text-align: center; position: relative; }
+    .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .menu-btn { background: none; border: none; color: var(--text-main); font-size: 24px; cursor: pointer; }
+    .hero-card { background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15)); border: 1px solid var(--accent-blue); border-radius: 16px; padding: 18px; text-align: center; margin-top: 10px; }
+    .hero-card h2 { font-size: 13px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 6px; }
+    .hero-card .balance-val { font-size: 32px; font-weight: 700; color: var(--success); margin-bottom: 12px; }
+
+    /* Barra de Progresso das % */
+    .progress-bar-container { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--border-color); margin-bottom: 12px; }
+    .p-seg { height: 100%; transition: width 0.3s ease; }
+    .bg-fixo { background: var(--accent-blue); }
+    .bg-edu { background: var(--accent-purple); }
+    .bg-cartao { background: var(--warning); }
+    .bg-sobra { background: var(--success); }
+
+    .sub-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 12px; text-align: left; }
+    .metric-item { background: rgba(0,0,0,0.2); padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+    .metric-item span { color: var(--text-muted); display: block; font-size: 11px; }
+
+    /* Navegação Inferior por Abas */
+    nav.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--card-bg); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 10px 0; z-index: 100; }
+    .nav-btn { background: none; border: none; color: var(--text-muted); font-size: 11px; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; flex: 1; }
+    .nav-btn.active { color: var(--accent-blue); font-weight: 600; }
+
+    /* Conteúdo das Abas */
+    main { padding: 16px; flex: 1; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+    .card-title { font-size: 15px; font-weight: 600; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+
+    /* Inputs e Botões */
+    input, select { width: 100%; padding: 10px 12px; background: var(--bg-dark); border: 1px solid var(--border-color); color: var(--text-main); border-radius: 8px; margin-bottom: 10px; }
+    .btn { background: var(--accent-blue); color: white; border: none; padding: 10px 14px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; text-align: center; }
+    .btn-secondary { background: var(--border-color); color: var(--text-main); }
+
+    /* Estilo da Aba Pagar */
+    .pay-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+    .pay-item input[type="checkbox"] { width: auto; margin: 0; width: 18px; height: 18px; }
+    .pay-info { flex: 1; margin-left: 12px; }
+    .pay-info strong { display: block; font-size: 14px; }
+    .pay-info span { font-size: 11px; color: var(--text-muted); }
+    .pay-val { font-weight: 600; font-size: 14px; }
+    .pay-val.covered { color: var(--success); }
+    .pay-val.uncovered { color: var(--danger); }
+
+    /* Drawer Lateral (Sanduíche) */
+    .drawer { position: fixed; top: 0; left: -100%; width: 280px; height: 100%; background: var(--card-bg); border-right: 1px solid var(--border-color); transition: left 0.3s ease; z-index: 200; padding: 20px; }
+    .drawer.open { left: 0; }
+    .drawer-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: none; z-index: 150; }
+    .drawer-overlay.show { display: block; }
+    .drawer-menu-item { padding: 12px 0; border-bottom: 1px solid var(--border-color); cursor: pointer; color: var(--text-main); font-size: 14px; }
+  
+    /* --- Acréscimos (mesmo estilo visual) --- */
+    .metric-item.span2 { grid-column: span 2; }
+    .metric-item strong.over { color: var(--danger); }
+    .month-box { display: flex; align-items: center; gap: 6px; }
+    .month-nav { background: none; border: none; color: var(--text-main); font-size: 22px; cursor: pointer; padding: 0 8px; }
+    .list-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-color); gap: 10px; }
+    .list-row:last-child { border-bottom: none; }
+    .list-info { flex: 1; min-width: 0; }
+    .list-info strong { display: block; font-size: 14px; }
+    .list-info span { font-size: 11px; color: var(--text-muted); }
+    .list-val { font-weight: 600; font-size: 14px; white-space: nowrap; }
+    .icon-btn { background: none; border: none; color: var(--text-muted); font-size: 16px; cursor: pointer; padding: 4px 6px; }
+    .link-btn { background: none; border: none; color: var(--accent-blue); font-size: 12px; font-weight: 600; cursor: pointer; padding: 4px 6px; }
+    .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-left: 6px; background: rgba(139, 92, 246, 0.18); color: var(--accent-purple); vertical-align: middle; }
+    .tag.warn { background: rgba(249, 115, 22, 0.18); color: var(--warning); }
+    .tag.ok { background: rgba(6, 182, 212, 0.18); color: var(--success); }
+    .hint { font-size: 12px; color: var(--text-muted); margin: -2px 0 10px; line-height: 1.4; }
+    .check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 10px; }
+    .check-row input { width: 18px; height: 18px; margin: 0; }
+    .field-label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+    .invoice-card { border-color: var(--warning); }
+    .invoice-val { font-size: 26px; font-weight: 700; color: var(--warning); margin: 2px 0 8px; }
+    .btn-warn { background: var(--warning); }
+    .empty { font-size: 13px; color: var(--text-muted); text-align: center; padding: 10px 0; }
+
+  
+    /* ===== Topaz v2 — marca, régua 50/35/15, modais ===== */
+    .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 17px; letter-spacing: .3px; }
+    .brand svg { width: 30px; height: 30px; flex-shrink: 0; }
+    .month-row { display: flex; align-items: center; justify-content: center; gap: 4px; margin: -4px 0 14px; }
+    .month-label-btn { background: none; border: none; color: var(--text-muted); font-size: 14px; font-weight: 600; cursor: pointer; padding: 4px 8px; font-family: inherit; }
+
+    .ruler { display: flex; gap: 4px; margin: 14px 0 12px; }
+    .slice { position: relative; height: 12px; border-radius: 6px; overflow: hidden; }
+    .slice.s50 { width: 50%; background: linear-gradient(90deg, rgba(96,165,250,.20), rgba(96,165,250,.09)); }
+    .slice.s35 { width: 35%; background: linear-gradient(90deg, rgba(251,191,36,.20), rgba(251,146,60,.09)); }
+    .slice.s15 { width: 15%; background: linear-gradient(90deg, rgba(45,212,191,.20), rgba(6,182,212,.09)); }
+    .slice-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 6px; transition: width .3s; }
+    .s50 .slice-fill { background: linear-gradient(90deg, rgba(96,165,250,.85), rgba(96,165,250,.55)); }
+    .s35 .slice-fill { background: linear-gradient(90deg, rgba(251,191,36,.85), rgba(251,146,60,.55)); }
+    .s15 .slice-fill { background: linear-gradient(90deg, rgba(45,212,191,.85), rgba(6,182,212,.55)); }
+    .slice.over .slice-fill { background: linear-gradient(90deg, rgba(239,68,68,.85), rgba(239,68,68,.55)); }
+
+    .sub-metrics { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .metric-item { border-radius: 10px; padding: 8px; border: 1px solid transparent; }
+    .metric-item span { font-size: 10px; line-height: 1.25; display: block; }
+    .metric-item strong { font-size: 12px; }
+    .metric-item.m50 { background: linear-gradient(135deg, rgba(96,165,250,.16), rgba(96,165,250,.05)); border-color: rgba(96,165,250,.22); }
+    .metric-item.m35 { background: linear-gradient(135deg, rgba(251,191,36,.16), rgba(251,146,60,.05)); border-color: rgba(251,146,60,.22); }
+    .metric-item.m15 { background: linear-gradient(135deg, rgba(45,212,191,.16), rgba(6,182,212,.05)); border-color: rgba(45,212,191,.22); }
+    .metric-item strong.over { color: var(--danger); }
+
+    .month-nav { background: none; border: none; color: var(--text-main); font-size: 22px; cursor: pointer; padding: 0 8px; }
+    .list-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-color); gap: 8px; }
+    .list-row:last-child { border-bottom: none; }
+    .list-info { flex: 1; min-width: 0; }
+    .list-info strong { display: block; font-size: 14px; }
+    .list-info span { font-size: 11px; color: var(--text-muted); }
+    .list-val { font-weight: 600; font-size: 14px; white-space: nowrap; }
+    .icon-btn { background: none; border: none; color: var(--text-muted); font-size: 16px; cursor: pointer; padding: 4px 5px; }
+    .link-btn { background: none; border: none; color: var(--accent-blue); font-size: 12px; font-weight: 600; cursor: pointer; padding: 4px 5px; font-family: inherit; }
+    .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-left: 6px; background: rgba(139,92,246,.18); color: var(--accent-purple); vertical-align: middle; }
+    .tag.warn { background: rgba(249,115,22,.18); color: var(--warning); }
+    .tag.ok { background: rgba(6,182,212,.18); color: var(--success); }
+    .hint { font-size: 12px; color: var(--text-muted); margin: -2px 0 10px; line-height: 1.4; }
+    .check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 10px; }
+    .check-row input { width: 18px; height: 18px; margin: 0; }
+    .field-label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+    .invoice-card { border-color: var(--warning); }
+    .invoice-val { font-size: 26px; font-weight: 700; color: var(--warning); margin: 2px 0 8px; }
+    .btn-warn { background: var(--warning); }
+    .btn-small { width: auto; padding: 8px 12px; font-size: 12px; }
+    .empty { font-size: 13px; color: var(--text-muted); text-align: center; padding: 10px 0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); margin: 16px 0 6px; }
+
+    .progress-track { height: 8px; border-radius: 8px; background: rgba(255,255,255,.07); overflow: hidden; margin: 8px 0 4px; }
+    .progress-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg, rgba(45,212,191,.9), rgba(96,165,250,.8)); }
+    .meta-line { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); }
+    .meta-actions { display: flex; gap: 6px; margin-top: 8px; align-items: center; flex-wrap: wrap; }
+    .meta-block { padding: 12px 0; border-bottom: 1px solid var(--border-color); }
+    .meta-block:last-child { border-bottom: none; }
+
+    .switch { -webkit-appearance: none; appearance: none; width: 42px; height: 24px; padding: 0; margin: 0; border: none; border-radius: 24px; background: rgba(255,255,255,.18); position: relative; cursor: pointer; flex-shrink: 0; transition: background .15s; }
+    .switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: left .15s; }
+    .switch:checked { background: var(--accent-blue); }
+    .switch:checked::after { left: 21px; }
+
+    /* Lista de meses */
+    .month-item { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 12px; margin-bottom: 6px; border-radius: 12px; border: 1px solid var(--border-color); background: rgba(255,255,255,.03); color: #cbd5e1; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-align: left; }
+    .month-item.past { color: #cbd5e1; background: rgba(255,255,255,.03); }
+    .month-item.current { color: #e0f2fe; background: linear-gradient(135deg, rgba(96,165,250,.22), rgba(45,212,191,.16)); border-color: rgba(96,165,250,.55); }
+    .month-item.future { color: #fcd34d; background: rgba(251,146,60,.08); border-color: rgba(251,146,60,.30); }
+    .month-item .mtag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; opacity: .8; margin-left: 6px; }
+    .month-item.viewing { box-shadow: 0 0 0 2px rgba(255,255,255,.28); }
+    .pill { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; border: 1px solid; font-variant-numeric: tabular-nums; }
+    .pill.pos { background: rgba(6,182,212,.14); color: #34d399; border-color: rgba(52,211,153,.4); }
+    .pill.neg { background: rgba(239,68,68,.14); color: #f87171; border-color: rgba(248,113,113,.4); }
+
+    /* Modal e aviso */
+    .modal { display: none; position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,.6); align-items: flex-end; justify-content: center; }
+    .modal.open { display: flex; }
+    .modal-sheet { width: 100%; max-width: 480px; max-height: 88vh; overflow-y: auto; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px 20px 0 0; padding: 18px 18px 26px; }
+    .modal-sheet h3 { margin-bottom: 12px; font-size: 16px; }
+    .modal-actions { display: flex; gap: 8px; margin-top: 8px; }
+    .toast-app { position: fixed; left: 12px; right: 12px; top: 12px; z-index: 400; background: #0f172a; color: #f1f5f9; border: 1px solid var(--border-color); border-radius: 14px; padding: 12px 14px; font-size: 13px; line-height: 1.4; display: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+    .toast-app.show { display: block; }
+    .toast-app strong { display: block; margin-bottom: 2px; }
+    .bottom-nav .nav-btn { font-size: 18px; }
+    .bottom-nav .nav-btn span { font-size: 10px; }
+
+
+    /* ===== Ajustes: área segura (status bar translúcida), cards clicáveis, sobra ===== */
+    header { padding-top: calc(20px + env(safe-area-inset-top)); }
+    nav.bottom-nav { padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
+    .metric-item { cursor: pointer; transition: transform .1s, filter .15s; -webkit-tap-highlight-color: transparent; }
+    .metric-item:hover { filter: brightness(1.12); }
+    .metric-item:active { transform: scale(.97); }
+    .metric-item:focus-visible { outline: 2px solid rgba(255,255,255,.5); outline-offset: 2px; }
+    .btn-sobra { margin-top: 12px; background: linear-gradient(90deg, #06b6d4, #34d399); color: #04201a; font-weight: 700; }
+    .reserve-card { border-color: rgba(45,212,191,.35); background: linear-gradient(135deg, rgba(45,212,191,.10), rgba(6,182,212,.04)); }
+
+    /* Evita o zoom automático do iOS ao focar nos campos (precisa ser >= 16px) */
+    input, select, textarea { font-size: 16px !important; }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+  <div class="drawer" id="drawer">
+    <h3 style="margin-bottom: 20px; color: var(--accent-blue);">Navegação & Opções</h3>
+    <div class="drawer-menu-item" onclick="switchTab('tab-simulador'); toggleDrawer();">🔮 Simulador de Compras</div>
+    <div class="drawer-menu-item" onclick="switchTab('tab-lembretes'); toggleDrawer();">🔔 Lembretes & Notificações</div>
+    <div class="drawer-menu-item" onclick="switchTab('tab-metas'); toggleDrawer();">🎯 Minhas Metas</div>
+    <div class="drawer-menu-item" onclick="switchTab('tab-historico'); toggleDrawer();">📅 Histórico & Previsão Futura</div>
+  </div>
+
+  <header>
+    <div class="header-top">
+      <button class="menu-btn" onclick="toggleDrawer()" aria-label="Menu">☰</button>
+      <div class="brand">
+        <svg viewBox="0 0 48 48" fill="none" aria-label="Topaz Finance">
+          <defs>
+            <linearGradient id="gemStroke" x1="4" y1="6" x2="44" y2="42" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#34d399"/>
+            </linearGradient>
+            <linearGradient id="gemFill" x1="8" y1="6" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#60a5fa" stop-opacity=".30"/><stop offset="1" stop-color="#2dd4bf" stop-opacity=".12"/>
+            </linearGradient>
+          </defs>
+          <polygon points="12,6 36,6 44,18 24,43 4,18" fill="url(#gemFill)" stroke="url(#gemStroke)" stroke-width="1.8" stroke-linejoin="round"/>
+          <g stroke="url(#gemStroke)" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" opacity=".9">
+            <line x1="4" y1="18" x2="44" y2="18"/>
+            <polyline points="12,6 17,18 24,6 31,18 36,6"/>
+            <polyline points="17,18 24,43 31,18"/>
+          </g>
+        </svg>
+        <span>Topaz Finance</span>
+      </div>
+      <button class="menu-btn" style="font-size: 18px;" onclick="switchTab('tab-historico')" aria-label="Meses">📅</button>
+    </div>
+    <div class="month-row">
+      <button class="month-nav" onclick="shiftMonth(-1)" aria-label="Mês anterior">‹</button>
+      <button class="month-label-btn" id="currentMonthYear" onclick="switchTab('tab-historico')">—</button>
+      <button class="month-nav" onclick="shiftMonth(1)" aria-label="Próximo mês">›</button>
+    </div>
+
+    <div class="hero-card">
+      <h2>Saldo Líquido Disponível</h2>
+      <div class="balance-val" id="dispBalance">R$ 0,00</div>
+
+      <div class="ruler" title="Régua 50% / 35% / 15% da receita do mês">
+        <div class="slice s50" id="sliceFixo"><div class="slice-fill" id="fillFixo"></div></div>
+        <div class="slice s35" id="sliceLazer"><div class="slice-fill" id="fillLazer"></div></div>
+        <div class="slice s15" id="sliceReserva"><div class="slice-fill" id="fillReserva"></div></div>
+      </div>
+
+      <div class="sub-metrics">
+        <div class="metric-item m50" role="button" tabindex="0" onclick="switchTab('tab-fixos')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><span>Fixos (50%)<br>gasto / meta</span><strong id="valFixoPct">R$ 0 / R$ 0</strong></div>
+        <div class="metric-item m35" role="button" tabindex="0" onclick="switchTab('tab-gastos')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><span>Lazer / Cartão (35%)<br>gasto / meta</span><strong id="valCartaoPct">R$ 0 / R$ 0</strong></div>
+        <div class="metric-item m15" role="button" tabindex="0" onclick="switchTab('tab-metas')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><span>Reserva / Metas (15%)<br>guardado / meta</span><strong id="valReservaPct">R$ 0 / R$ 0</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- RESUMO -->
+    <div id="tab-resumo" class="tab-content active">
+      <div class="card">
+        <div class="card-title">Resumo Rápido do Mês</div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Visão geral das suas entradas e saídas programadas no mês selecionado.</p>
+        <div id="summaryRows"></div>
+        <button class="btn" style="margin-top: 12px;" onclick="switchTab('tab-simulador')">Testar Simulador de Compra</button>
+      </div>
+    </div>
+
+    <!-- RECEITAS -->
+    <div id="tab-receitas" class="tab-content">
+      <div class="card">
+        <div class="card-title">Adicionar Nova Receita</div>
+        <input type="text" id="incDesc" placeholder="Descrição (ex: Salário, Freelance, Venda de Item)">
+        <input type="text" inputmode="numeric" id="incVal" placeholder="Valor (R$)" oninput="maskMoney(this)">
+        <select id="incType">
+          <option value="fixo">Receita Recorrente (Todo mês)</option>
+          <option value="temp">⚡ Receita Temporária (só este mês)</option>
+        </select>
+        <button class="btn" onclick="addIncome()">Salvar Receita</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Minhas Receitas</div>
+        <div id="incomeList"></div>
+      </div>
+    </div>
+
+    <!-- FIXOS -->
+    <div id="tab-fixos" class="tab-content">
+      <div class="card">
+        <div class="card-title">Cadastrar Gasto Fixo</div>
+        <input type="text" id="expDesc" placeholder="Descrição (ex: Aluguel / Condomínio, Conta de Energia, Plano de Internet, Assinatura de Streaming, Curso / Faculdade)">
+        <input type="text" inputmode="numeric" id="expVal" placeholder="Valor (R$)" oninput="maskMoney(this)">
+        <select id="expCategory">
+          <option value="fixo">Essenciais (Aluguel / Condomínio, Energia, Internet)</option>
+          <option value="edu">Educação (Curso / Faculdade)</option>
+          <option value="cartao">Pago no Cartão de Crédito (entra na fatura)</option>
+        </select>
+        <input type="number" id="expInstallments" placeholder="Nº de parcelas (opcional — em branco = recorrente)" min="1">
+        <label class="field-label" for="expStart">Mês de início</label>
+        <input type="month" id="expStart">
+        <label class="check-row"><input type="checkbox" id="expSubscription" onchange="onSubscriptionToggle()"> 🔁 Assinatura Recorrente (sem data de término)</label>
+        <button class="btn" onclick="addExpense()">Cadastrar Gasto Fixo</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Meus Gastos Fixos</div>
+        <div id="expenseList"></div>
+      </div>
+    </div>
+
+    <!-- GASTOS VARIÁVEIS -->
+    <div id="tab-gastos" class="tab-content">
+      <div class="card">
+        <div class="card-title">Lançar Gasto</div>
+        <input type="text" id="purDesc" placeholder="Descrição (ex: Supermercado, Farmácia, Combustível, Restaurante / Lanche)">
+        <input type="text" inputmode="numeric" id="purVal" placeholder="Valor total da compra (R$)" oninput="maskMoney(this); updatePurchaseHint();">
+        <label class="field-label" for="purDate">Data da compra</label>
+        <input type="date" id="purDate" onchange="updatePurchaseHint()">
+        <select id="purMethod" onchange="updatePurchaseHint()">
+          <option value="cartao">💳 Cartão de Crédito</option>
+          <option value="avista">💵 À vista / Já pago</option>
+        </select>
+        <div id="cardFields">
+          <label class="field-label" for="purParcelas">Nº de parcelas</label>
+          <input type="number" id="purParcelas" min="1" value="1" oninput="updatePurchaseHint()">
+          <label class="field-label" for="purClosing">Dia de fechamento da fatura (1 a 31)</label>
+          <input type="number" id="purClosing" min="1" max="31" oninput="updatePurchaseHint()">
+        </div>
+        <p class="hint" id="purHint"></p>
+        <button class="btn" onclick="addPurchase()">Lançar Gasto</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Gastos do mês selecionado</div>
+        <div id="purchaseList"></div>
+      </div>
+    </div>
+
+    <!-- PAGAR -->
+    <div id="tab-pagar" class="tab-content">
+      <div class="card invoice-card">
+        <div class="card-title">💳 Fatura do Cartão <span id="invoiceMonth" style="font-size: 12px; color: var(--text-muted); font-weight: 400;"></span></div>
+        <div class="invoice-val" id="invoiceVal">R$ 0,00</div>
+        <p class="hint" id="invoiceInfo"></p>
+        <button class="btn btn-warn" id="btnQuitar" onclick="quitarFatura()">Quitar Fatura do Cartão</button>
+        <button class="btn btn-secondary" id="btnReabrir" style="display: none;" onclick="reabrirFatura()">↩ Reabrir fatura</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Simulador de Quitação</div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Digite quanto você tem em mãos para ver o que consegue quitar:</p>
+        <input type="text" inputmode="numeric" id="availableCash" placeholder="R$ Disponível na conta hoje" oninput="maskMoney(this); calculatePayable();">
+      </div>
+      <div class="card">
+        <div class="card-title">Contas do Mês a Pagar</div>
+        <div id="payList"></div>
+        <button class="btn" id="btnPaySelected" style="margin-top: 10px;" onclick="paySelected()">Confirmar Pagamento dos Selecionados</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Já pagas neste mês</div>
+        <div id="paidList"></div>
+      </div>
+    </div>
+
+    <!-- BUSCAR -->
+    <div id="tab-buscar" class="tab-content">
+      <div class="card">
+        <div class="card-title">🔍 Buscar no Histórico</div>
+        <input type="text" id="sQuery" placeholder="Buscar por nome..." oninput="renderSearch()">
+        <div class="row2">
+          <select id="sType" onchange="renderSearch()">
+            <option value="todos">Todos os tipos</option>
+            <option value="incomes">Receitas</option>
+            <option value="expenses">Gastos fixos</option>
+            <option value="purchases">Gastos variáveis</option>
+          </select>
+          <input type="month" id="sMonth" onchange="renderSearch()" title="Mês (opcional)">
+        </div>
+        <div class="row2">
+          <input type="text" inputmode="numeric" id="sMin" placeholder="Valor mínimo" oninput="maskMoney(this); renderSearch();">
+          <input type="text" inputmode="numeric" id="sMax" placeholder="Valor máximo" oninput="maskMoney(this); renderSearch();">
+        </div>
+        <button class="link-btn" onclick="clearSearch()">Limpar filtros</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Resultados</div>
+        <div id="searchTotals" class="hint"></div>
+        <div id="searchList"></div>
+      </div>
+    </div>
+
+    <!-- SIMULADOR -->
+    <div id="tab-simulador" class="tab-content">
+      <div class="card">
+        <div class="card-title">Simular Novo Parcelamento</div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Veja se o saldo do mês suporta a compra sem ficar negativo.</p>
+        <input type="text" id="simDesc" placeholder="Nome do item (ex: Celular, Eletrodoméstico, Viagem)">
+        <input type="text" inputmode="numeric" id="simTotal" placeholder="Valor total da compra (R$)" oninput="maskMoney(this)">
+        <input type="number" id="simParcelas" placeholder="Número de parcelas (ex: 6)" min="1">
+        <button class="btn" onclick="runSimulation()">Verificar Viabilidade</button>
+        <div id="simResult" style="margin-top: 12px; font-size: 13px; line-height: 1.5;"></div>
+      </div>
+    </div>
+
+    <!-- LEMBRETES -->
+    <div id="tab-lembretes" class="tab-content">
+      <div class="card">
+        <div class="card-title">🔔 Notificações</div>
+        <button class="btn" onclick="enableNotifications()">🔔 Ativar Notificações</button>
+        <p class="hint" id="notifStatus" style="margin-top: 8px;"></p>
+        <p class="hint">Os avisos disparam com o app aberto ou em segundo plano recente. No iPhone, instale o app pela Tela de Início (iOS 16.4+) e abra pelo ícone. Sem um servidor de push, o celular não dispara alarmes com o app totalmente fechado.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Novo Lembrete</div>
+        <input type="text" id="remTitle" placeholder="Título (ex: Rever gastos do dia)">
+        <label class="field-label" for="remTime">Horário</label>
+        <input type="time" id="remTime" value="22:00">
+        <button class="btn" onclick="addReminder()">+ Adicionar Lembrete</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Meus Lembretes</div>
+        <div id="reminderList"></div>
+      </div>
+    </div>
+
+    <!-- METAS -->
+    <div id="tab-metas" class="tab-content">
+      <div class="card reserve-card" id="reserveBox"></div>
+      <div class="card">
+        <div class="card-title">🎯 Adicionar Nova Meta</div>
+        <input type="text" id="metaName" placeholder="Nome da meta (ex: Reserva de Emergência, Viagem, Troca de Veículo)">
+        <input type="text" inputmode="numeric" id="metaTarget" placeholder="Valor alvo (R$)" oninput="maskMoney(this)">
+        <button class="btn" onclick="addMeta()">+ Criar Meta</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Minhas Metas</div>
+        <div id="metaList"></div>
+      </div>
+    </div>
+
+    <!-- HISTÓRICO -->
+    <div id="tab-historico" class="tab-content">
+      <div class="card">
+        <div class="card-title">📅 Histórico & Previsão</div>
+        <p class="hint">Toque num mês para abri-lo. O valor mostra o saldo previsto ou realizado daquele mês.</p>
+        <div class="section-label" style="margin-top: 4px;">Mês atual</div>
+        <div id="monthCurrent"></div>
+        <div class="section-label">Próximos meses (previsão)</div>
+        <div id="monthFuture"></div>
+        <button class="btn btn-secondary" id="btnMoreMonths" onclick="loadMoreMonths()">Carregar mais meses</button>
+        <div class="section-label">Meses anteriores</div>
+        <div id="monthPast"></div>
+      </div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" onclick="switchTab('tab-resumo')">📊 <span>Resumo</span></button>
+    <button class="nav-btn" onclick="switchTab('tab-receitas')">💰 <span>Receitas</span></button>
+    <button class="nav-btn" onclick="switchTab('tab-fixos')">📝 <span>Fixos</span></button>
+    <button class="nav-btn" onclick="switchTab('tab-gastos')">🛒 <span>Gastos</span></button>
+    <button class="nav-btn" onclick="switchTab('tab-pagar')">✅ <span>Pagar</span></button>
+    <button class="nav-btn" onclick="switchTab('tab-buscar')">🔍 <span>Buscar</span></button>
+  </nav>
+
+  <!-- Modal de edição / ações -->
+  <div class="modal" id="modal" onclick="if(event.target===this) closeModal()">
+    <div class="modal-sheet">
+      <h3 id="modalTitle">Editar</h3>
+      <div id="modalBody"></div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+        <button class="btn" onclick="submitModal()">Salvar</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast-app" id="toastApp"></div>
+
+  <script>
+    // ===== Persistência =====
+    const STORAGE_KEY = 'topaz_finance_v2';
+    const OLD_KEY = 'topaz_finance_v1';
+    const NOTIF_KEY = 'topaz_notif_v2';
+    const $ = id => document.getElementById(id);
+
+    function emptyState() {
+      return { incomes: [], expenses: [], purchases: [], metas: [], lembretes: [], settings: { closingDay: 14 } };
+    }
+    let needsMigrationSave = false;
+    function loadState() {
+      const s = emptyState();
+      try {
+        let raw = localStorage.getItem(STORAGE_KEY);
+        let migrated = false;
+        if (!raw) { raw = localStorage.getItem(OLD_KEY); migrated = !!raw; }
+        if (!raw) return s;
+        const p = JSON.parse(raw);
+        ['incomes', 'expenses', 'purchases', 'metas', 'lembretes'].forEach(k => { if (Array.isArray(p[k])) s[k] = p[k]; });
+        const cd = p.settings && Number(p.settings.closingDay);
+        if (cd >= 1 && cd <= 31) s.settings.closingDay = cd;
+        if (migrated) { s.expenses.forEach(e => { if (!(e.inst > 1)) e.inst = null; }); needsMigrationSave = true; }
+        s.expenses.forEach(e => {
+          if (!(e.inst >= 1)) e.inst = null;
+          if (!Array.isArray(e.paidMonths)) e.paidMonths = [];
+        });
+        s.metas.forEach(m => { if (!Array.isArray(m.deposits)) m.deposits = []; });
+      } catch (e) { /* dados corrompidos: começa zerado */ }
+      return s;
+    }
+    function saveState() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(appState)); }
+      catch (e) { alert('Não foi possível salvar os dados neste navegador (modo privado ou armazenamento cheio).'); }
+    }
+    let appState = loadState();
+    if (needsMigrationSave) saveState();
+
+    // ===== Utilitários =====
+    const MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+    const CAT_LABEL = { fixo: 'Essencial', edu: 'Educação', cartao: 'Cartão' };
+    function round2(x) { return Math.round(x * 100) / 100; }
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+    function fmt(v) { return Number(v || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
+    function fmt0(v) { return Number(v || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }); }
+    function esc(t) { return String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+    // Máscara tipo caixa eletrônico: os dígitos entram pela direita (centavos)
+    function maskMoney(el) {
+      let d = el.value.replace(/\D/g, '').replace(/^0+/, '').slice(0, 13);
+      if (!d) { el.value = ''; return; }
+      el.value = 'R$ ' + (parseInt(d, 10) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    function parseMoney(str) {
+      const d = String(str || '').replace(/\D/g, '');
+      return d ? parseInt(d, 10) / 100 : NaN;
+    }
+    function fmtInput(v) {
+      return 'R$ ' + Number(v || 0).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function ymNow() { const d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1); }
+    function todayISO() { const d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+    function addMonths(ym, n) {
+      const [y, m] = ym.split('-').map(Number);
+      const i = y * 12 + (m - 1) + n;
+      return Math.floor(i / 12) + '-' + pad((i % 12) + 1);
+    }
+    function monthsBetween(a, b) {
+      const [ya, ma] = a.split('-').map(Number), [yb, mb] = b.split('-').map(Number);
+      return (yb * 12 + mb) - (ya * 12 + ma);
+    }
+    function monthLabel(ym) { const [y, m] = ym.split('-').map(Number); return MESES[m - 1] + ' / ' + y; }
+    function shortMonth(ym) { const [y, m] = ym.split('-'); return m + '/' + y; }
+    let viewMonth = ymNow();
+
+    // ===== Regras de negócio =====
+    function incomeActive(i, ym) {
+      if (i.type === 'temp') return i.month === ym;
+      if (ym < i.start) return false;
+      if (i.end && ym > i.end) return false;
+      return true;
+    }
+    function expenseActive(e, ym) {
+      if (ym < e.start) return false;
+      if (e.end && ym > e.end) return false;
+      if (e.inst && ym > addMonths(e.start, e.inst - 1)) return false;
+      return true;
+    }
+    function invoiceMonthFor(dateISO, closingDay) {
+      const [y, m, d] = dateISO.split('-').map(Number);
+      const ym = y + '-' + pad(m);
+      return d >= closingDay ? addMonths(ym, 1) : ym;
+    }
+    function isPaidMonth(e, ym) { return Array.isArray(e.paidMonths) && e.paidMonths.includes(ym); }
+    function metaSaved(m) { return m.deposits.reduce((a, d) => a + d.amount, 0); }
+    function reservedInMonth(ym) {
+      return appState.metas.reduce((a, m) => a + m.deposits.filter(d => d.month === ym).reduce((b, d) => b + d.amount, 0), 0);
+    }
+
+    function computeMonth(ym) {
+      const income = appState.incomes.filter(i => incomeActive(i, ym)).reduce((a, i) => a + i.val, 0);
+      // Todo gasto recorrente/parcelado cadastrado em Fixos (essencial, educação ou cartão) conta nos 50%
+      const fixosBucket = appState.expenses.filter(e => expenseActive(e, ym)).reduce((a, e) => a + e.val, 0);
+      const lazer = appState.purchases.filter(p => p.targetMonth === ym).reduce((a, p) => a + p.val, 0);
+      const reservado = reservedInMonth(ym);
+      const transferido = appState.incomes.filter(i => i.transferFrom === ym).reduce((a, i) => a + i.val, 0);
+      return {
+        income, fixosBucket, lazer, reservado, transferido,
+        balance: round2(income - fixosBucket - lazer - reservado - transferido),
+        t50: income * 0.5, t35: income * 0.35, t15: income * 0.15
+      };
+    }
+    function invoiceInfo(ym) {
+      const buys = appState.purchases.filter(p => p.method === 'cartao' && p.targetMonth === ym);
+      const cardFix = appState.expenses.filter(e => e.cat === 'cartao' && expenseActive(e, ym));
+      const pending = buys.filter(p => !p.pago).reduce((a, p) => a + p.val, 0)
+                    + cardFix.filter(e => !isPaidMonth(e, ym)).reduce((a, e) => a + e.val, 0);
+      const total = buys.reduce((a, p) => a + p.val, 0) + cardFix.reduce((a, e) => a + e.val, 0);
+      const r2 = x => Math.round(x * 100) / 100;
+      return { buys, cardFix, pending: r2(pending), total: r2(total), count: buys.length + cardFix.length };
+    }
+
+    // ===== Navegação =====
+    function toggleDrawer() {
+      $('drawer').classList.toggle('open');
+      $('drawerOverlay').classList.toggle('show');
+    }
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+      const t = $(tabId);
+      if (t) t.classList.add('active');
+      const idx = ['tab-resumo', 'tab-receitas', 'tab-fixos', 'tab-gastos', 'tab-pagar', 'tab-buscar'].indexOf(tabId);
+      if (idx !== -1) document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+      updateCalculations();
+      window.scrollTo(0, 0);
+    }
+    function setMonth(ym) { viewMonth = ym; syncFormDefaults(true); updateCalculations(); }
+    function shiftMonth(n) { setMonth(addMonths(viewMonth, n)); }
+    function goMonth(ym) { setMonth(ym); switchTab('tab-resumo'); }
+
+    function syncFormDefaults(force) {
+      if (force || !$('expStart').value) $('expStart').value = viewMonth;
+      if (!$('purDate').value) $('purDate').value = todayISO();
+      if (!$('purClosing').value) $('purClosing').value = appState.settings.closingDay;
+      updatePurchaseHint();
+    }
+    function onSubscriptionToggle() {
+      const on = $('expSubscription').checked;
+      if (on) $('expInstallments').value = '';
+      $('expInstallments').disabled = on;
+    }
+
+    // ===== Modal =====
+    let modalSave = null;
+    function openModal(title, html, onSave) {
+      $('modalTitle').textContent = title;
+      $('modalBody').innerHTML = html;
+      modalSave = onSave;
+      $('modal').classList.add('open');
+    }
+    function closeModal() { $('modal').classList.remove('open'); modalSave = null; }
+    function submitModal() { if (modalSave && modalSave() !== false) closeModal(); }
+    function field(label, inner) { return `<label class="field-label">${label}</label>${inner}`; }
+    function moneyInput(id, v) { return `<input type="text" inputmode="numeric" id="${id}" value="${v ? fmtInput(v) : ''}" oninput="maskMoney(this)">`; }
+
+    // ===== Receitas =====
+    function addIncome() {
+      const desc = $('incDesc').value.trim();
+      const val = parseMoney($('incVal').value);
+      const type = $('incType').value;
+      if (!desc || !(val > 0)) { alert('Informe a descrição e um valor maior que zero.'); return; }
+      const item = { id: uid(), desc, val, type };
+      if (type === 'temp') item.month = viewMonth; else { item.start = viewMonth; item.end = null; }
+      appState.incomes.push(item);
+      saveState();
+      $('incDesc').value = ''; $('incVal').value = '';
+      updateCalculations();
+    }
+    function editIncome(id) {
+      const i = appState.incomes.find(x => x.id === id); if (!i) return;
+      openModal('Editar receita',
+        field('Descrição', `<input type="text" id="m_desc" value="${esc(i.desc)}">`) +
+        field('Valor', moneyInput('m_val', i.val)) +
+        field('Tipo', `<select id="m_type"><option value="fixo" ${i.type !== 'temp' ? 'selected' : ''}>Recorrente (todo mês)</option><option value="temp" ${i.type === 'temp' ? 'selected' : ''}>⚡ Temporária (só um mês)</option></select>`) +
+        field('Mês (início se recorrente)', `<input type="month" id="m_month" value="${i.type === 'temp' ? i.month : i.start}">`) +
+        field('Encerrar em (opcional, só recorrente)', `<input type="month" id="m_end" value="${i.end || ''}">`),
+        () => {
+          const desc = $('m_desc').value.trim(), val = parseMoney($('m_val').value), month = $('m_month').value;
+          if (!desc || !(val > 0) || !month) { alert('Preencha descrição, valor e mês.'); return false; }
+          i.desc = desc; i.val = val; i.type = $('m_type').value;
+          if (i.type === 'temp') { i.month = month; delete i.start; delete i.end; }
+          else { i.start = month; i.end = $('m_end').value || null; delete i.month; }
+          saveState(); updateCalculations();
+        });
+    }
+
+    // ===== Gastos fixos =====
+    function addExpense() {
+      const desc = $('expDesc').value.trim();
+      const val = parseMoney($('expVal').value);
+      const cat = $('expCategory').value;
+      const assinatura = $('expSubscription').checked;
+      const instRaw = parseInt($('expInstallments').value);
+      const inst = (!assinatura && instRaw >= 1) ? instRaw : null; // em branco = recorrente
+      const start = $('expStart').value || viewMonth;
+      if (!desc || !(val > 0)) { alert('Informe a descrição e um valor maior que zero.'); return; }
+      appState.expenses.push({ id: uid(), desc, val, cat, inst, start, end: null, assinatura, paidMonths: [] });
+      saveState();
+      $('expDesc').value = ''; $('expVal').value = ''; $('expInstallments').value = '';
+      $('expSubscription').checked = false; onSubscriptionToggle();
+      updateCalculations();
+    }
+    function editExpense(id) {
+      const e = appState.expenses.find(x => x.id === id); if (!e) return;
+      const opt = (v, t) => `<option value="${v}" ${e.cat === v ? 'selected' : ''}>${t}</option>`;
+      openModal('Editar gasto fixo',
+        field('Descrição', `<input type="text" id="m_desc" value="${esc(e.desc)}">`) +
+        field('Valor', moneyInput('m_val', e.val)) +
+        field('Categoria', `<select id="m_cat">${opt('fixo', 'Essenciais (Aluguel / Condomínio, Energia, Internet)')}${opt('edu', 'Educação (Curso / Faculdade)')}${opt('cartao', 'Pago no Cartão de Crédito (entra na fatura)')}</select>`) +
+        field('Nº de parcelas (em branco = recorrente)', `<input type="number" id="m_inst" min="1" value="${e.inst || ''}">`) +
+        field('Mês de início', `<input type="month" id="m_start" value="${e.start}">`) +
+        field('Encerrar em (opcional)', `<input type="month" id="m_end" value="${e.end || ''}">`) +
+        `<label class="check-row"><input type="checkbox" id="m_sub" ${e.assinatura ? 'checked' : ''}> 🔁 Assinatura Recorrente</label>`,
+        () => {
+          const desc = $('m_desc').value.trim(), val = parseMoney($('m_val').value), start = $('m_start').value;
+          if (!desc || !(val > 0) || !start) { alert('Preencha descrição, valor e mês de início.'); return false; }
+          const sub = $('m_sub').checked, instRaw = parseInt($('m_inst').value);
+          e.desc = desc; e.val = val; e.cat = $('m_cat').value; e.start = start;
+          e.end = $('m_end').value || null; e.assinatura = sub;
+          e.inst = (!sub && instRaw >= 1) ? instRaw : null;
+          saveState(); updateCalculations();
+        });
+    }
+
+    // ===== Gastos variáveis / cartão =====
+    function currentClosingDay() {
+      const v = parseInt($('purClosing').value);
+      return (v >= 1 && v <= 31) ? v : appState.settings.closingDay;
+    }
+    function splitInstallments(total, n) {
+      const cents = Math.round(total * 100), base = Math.floor(cents / n), rem = cents - base * n;
+      return Array.from({ length: n }, (_, k) => (base + (k < rem ? 1 : 0)) / 100);
+    }
+    function updatePurchaseHint() {
+      const method = $('purMethod').value, date = $('purDate').value;
+      $('cardFields').style.display = method === 'cartao' ? '' : 'none';
+      const hint = $('purHint');
+      if (!date) { hint.textContent = ''; return; }
+      if (method === 'cartao') {
+        const n = Math.max(1, parseInt($('purParcelas').value) || 1);
+        const first = invoiceMonthFor(date, currentClosingDay());
+        const total = parseMoney($('purVal').value);
+        let txt = '💳 ' + (n > 1 ? n + 'x' + (total > 0 ? ' de ' + fmt(splitInstallments(total, n)[n - 1]) : '') + ' · 1ª parcela na fatura de ' + monthLabel(first) + ', última em ' + monthLabel(addMonths(first, n - 1)) + '.'
+                                : 'Esta compra cairá na fatura de ' + monthLabel(first) + '.');
+        hint.textContent = txt + ' (fechamento no dia ' + currentClosingDay() + ')';
+      } else {
+        hint.textContent = '💵 Entra direto no mês de ' + monthLabel(date.slice(0, 7)) + ' como já pago.';
+      }
+    }
+    function addPurchase() {
+      const desc = $('purDesc').value.trim();
+      const val = parseMoney($('purVal').value);
+      const date = $('purDate').value;
+      const method = $('purMethod').value;
+      if (!desc || !(val > 0) || !date) { alert('Informe descrição, valor maior que zero e a data da compra.'); return; }
+      if (method === 'cartao') {
+        const cd = currentClosingDay();
+        appState.settings.closingDay = cd;
+        const n = Math.max(1, parseInt($('purParcelas').value) || 1);
+        const first = invoiceMonthFor(date, cd);
+        const groupId = n > 1 ? uid() : null;
+        splitInstallments(val, n).forEach((v, k) => {
+          const p = { id: uid(), desc, val: v, date, method: 'cartao', targetMonth: addMonths(first, k), pago: false };
+          if (n > 1) { p.groupId = groupId; p.parcela = k + 1; p.parcelas = n; }
+          appState.purchases.push(p);
+        });
+      } else {
+        appState.purchases.push({ id: uid(), desc, val, date, method: 'avista', targetMonth: date.slice(0, 7), pago: true });
+      }
+      saveState();
+      $('purDesc').value = ''; $('purVal').value = ''; $('purParcelas').value = 1; $('purDate').value = todayISO();
+      updatePurchaseHint(); updateCalculations();
+    }
+    function purchaseTitle(p) { return esc(p.desc) + (p.parcelas ? ' (' + p.parcela + '/' + p.parcelas + ')' : ''); }
+    function editPurchase(id) {
+      const p = appState.purchases.find(x => x.id === id); if (!p) return;
+      const grp = !!p.groupId;
+      let html = field('Descrição', `<input type="text" id="m_desc" value="${esc(p.desc)}">`) +
+                 field(grp ? 'Valor desta parcela' : 'Valor', moneyInput('m_val', p.val));
+      if (grp) {
+        html += `<label class="check-row"><input type="checkbox" id="m_all"> Aplicar descrição e valor às demais parcelas não pagas</label>
+                 <p class="hint">Compra parcelada em ${p.parcelas}x. Data e forma de pagamento valem para a compra toda e não mudam aqui.</p>`;
+      } else {
+        html += field('Data da compra', `<input type="date" id="m_date" value="${p.date}">`) +
+                field('Forma de pagamento', `<select id="m_method"><option value="cartao" ${p.method === 'cartao' ? 'selected' : ''}>💳 Cartão de Crédito</option><option value="avista" ${p.method !== 'cartao' ? 'selected' : ''}>💵 À vista / Já pago</option></select>`);
+      }
+      openModal('Editar gasto', html, () => {
+        const desc = $('m_desc').value.trim(), val = parseMoney($('m_val').value);
+        if (!desc || !(val > 0)) { alert('Preencha descrição e valor.'); return false; }
+        if (grp) {
+          const targets = $('m_all').checked ? appState.purchases.filter(x => x.groupId === p.groupId && (!x.pago || x.id === p.id)) : [p];
+          targets.forEach(x => { x.desc = desc; x.val = val; });
+        } else {
+          const date = $('m_date').value, method = $('m_method').value;
+          if (!date) { alert('Informe a data.'); return false; }
+          p.desc = desc; p.val = val; p.date = date;
+          if (method === 'cartao') { p.targetMonth = invoiceMonthFor(date, appState.settings.closingDay); if (p.method !== 'cartao') p.pago = false; }
+          else { p.targetMonth = date.slice(0, 7); p.pago = true; }
+          p.method = method;
+        }
+        saveState(); updateCalculations();
+      });
+    }
+
+    // ===== Excluir / encerrar =====
+    function editItem(list, id) { ({ incomes: editIncome, expenses: editExpense, purchases: editPurchase })[list](id); }
+    function removeItem(list, id) {
+      const item = appState[list].find(x => x.id === id); if (!item) return;
+      const name = list === 'purchases' ? item.desc + (item.parcelas ? ' (' + item.parcela + '/' + item.parcelas + ')' : '') : item.desc;
+      if (!confirm('Excluir "' + name + '"? Essa ação não pode ser desfeita.')) return;
+      let ids = [id];
+      if (list === 'purchases' && item.groupId) {
+        const others = appState.purchases.filter(x => x.groupId === item.groupId && x.id !== id);
+        if (others.length && confirm('Essa compra tem outras ' + others.length + ' parcela(s). Excluir TODAS as parcelas? (Cancelar exclui só esta)')) ids = appState.purchases.filter(x => x.groupId === item.groupId).map(x => x.id);
+      }
+      appState[list] = appState[list].filter(x => !ids.includes(x.id));
+      saveState(); updateCalculations();
+    }
+    function endItem(list, id) {
+      const item = appState[list].find(x => x.id === id); if (!item) return;
+      if (!confirm('Encerrar "' + item.desc + '" a partir de ' + monthLabel(viewMonth) + '? Os meses anteriores continuam com o lançamento.')) return;
+      item.end = addMonths(viewMonth, -1);
+      saveState(); updateCalculations();
+    }
+
+    // ===== Metas =====
+    function addMeta() {
+      const name = $('metaName').value.trim(), target = parseMoney($('metaTarget').value);
+      if (!name || !(target > 0)) { alert('Informe o nome e o valor alvo da meta.'); return; }
+      appState.metas.push({ id: uid(), name, target, deposits: [] });
+      saveState();
+      $('metaName').value = ''; $('metaTarget').value = '';
+      updateCalculations();
+    }
+    function editMeta(id) {
+      const m = appState.metas.find(x => x.id === id); if (!m) return;
+      openModal('Editar meta',
+        field('Nome', `<input type="text" id="m_name" value="${esc(m.name)}">`) + field('Valor alvo', moneyInput('m_target', m.target)),
+        () => {
+          const name = $('m_name').value.trim(), target = parseMoney($('m_target').value);
+          if (!name || !(target > 0)) { alert('Preencha nome e valor alvo.'); return false; }
+          m.name = name; m.target = target; saveState(); updateCalculations();
+        });
+    }
+    function removeMeta(id) {
+      const m = appState.metas.find(x => x.id === id); if (!m) return;
+      if (!confirm('Excluir a meta "' + m.name + '"? O valor guardado nela deixa de contar no saldo.')) return;
+      appState.metas = appState.metas.filter(x => x.id !== id);
+      saveState(); updateCalculations();
+    }
+    function metaMove(id, sign) {
+      const m = appState.metas.find(x => x.id === id); if (!m) return;
+      const verb = sign > 0 ? 'Guardar' : 'Resgatar';
+      openModal(verb + ' — ' + m.name,
+        field('Valor (' + monthLabel(viewMonth) + ')', moneyInput('m_amount', 0)) + (sign < 0 ? `<p class="hint">Guardado até agora: ${fmt(metaSaved(m))}</p>` : ''),
+        () => {
+          const v = parseMoney($('m_amount').value);
+          if (!(v > 0)) { alert('Informe um valor maior que zero.'); return false; }
+          if (sign < 0 && v > metaSaved(m) + 0.001) { alert('Você só pode resgatar até ' + fmt(metaSaved(m)) + '.'); return false; }
+          m.deposits.push({ id: uid(), month: viewMonth, amount: sign * v });
+          saveState(); updateCalculations();
+        });
+    }
+    function renderReserve() {
+      const c = computeMonth(viewMonth), falta = round2(Math.max(0, c.t15 - c.reservado));
+      let html = `<div class="card-title">🎯 Reserva do mês (15%)</div>
+        <p class="hint">15% da receita de ${monthLabel(viewMonth)}: <strong>${fmt(c.t15)}</strong> · guardado no mês: ${fmt(c.reservado)}</p>`;
+      if (!(c.t15 > 0)) html += '<div class="empty">Cadastre uma receita neste mês para calcular os 15%.</div>';
+      else if (falta <= 0.004) html += '<div class="empty">✅ A reserva de 15% deste mês já foi atingida.</div>';
+      else html += `<button class="btn" onclick="reserveFifteen()">＋ Guardar / Reservar ${fmt(falta)} (15%)</button>`;
+      $('reserveBox').innerHTML = html;
+    }
+    function reserveFifteen() {
+      const c = computeMonth(viewMonth), falta = round2(Math.max(0, c.t15 - c.reservado));
+      if (falta <= 0.004) return;
+      if (!appState.metas.length) { alert('Crie uma meta primeiro (formulário logo abaixo) para guardar a reserva dos 15%.'); return; }
+      const opts = appState.metas.map(m => `<option value="${m.id}">${esc(m.name)}</option>`).join('');
+      openModal('Reservar 15% — ' + monthLabel(viewMonth),
+        field('Meta de destino', `<select id="m_meta">${opts}</select>`) +
+        field('Valor a reservar', moneyInput('m_amount', falta)) +
+        '<p class="hint">Sugestão: o que falta para completar 15% da receita do mês. Você pode ajustar o valor.</p>',
+        () => {
+          const v = parseMoney($('m_amount').value), m = appState.metas.find(x => x.id === $('m_meta').value);
+          if (!m || !(v > 0)) { alert('Escolha a meta e informe um valor maior que zero.'); return false; }
+          m.deposits.push({ id: uid(), month: viewMonth, amount: v });
+          saveState(); updateCalculations();
+        });
+    }
+    function renderMetas() {
+      renderReserve();
+      const el = $('metaList');
+      if (!appState.metas.length) { el.innerHTML = '<div class="empty">Nenhuma meta criada ainda. Use o formulário acima.</div>'; return; }
+      el.innerHTML = appState.metas.map(m => {
+        const saved = metaSaved(m), pct = Math.max(0, Math.min(100, Math.round(saved / m.target * 100)));
+        return `<div class="meta-block">
+          <div class="list-row" style="border:none;padding:0;"><div class="list-info"><strong>${esc(m.name)}${pct >= 100 ? '<span class="tag ok">✓ Concluída</span>' : ''}</strong></div>
+            <button class="icon-btn" onclick="editMeta('${m.id}')" aria-label="Editar">✏️</button>
+            <button class="icon-btn" onclick="removeMeta('${m.id}')" aria-label="Excluir">✕</button></div>
+          <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+          <div class="meta-line"><span>${fmt(saved)} de ${fmt(m.target)}</span><span>${pct}%</span></div>
+          <div class="meta-actions"><button class="btn btn-small" onclick="metaMove('${m.id}', 1)">＋ Guardar</button><button class="btn btn-secondary btn-small" onclick="metaMove('${m.id}', -1)">Resgatar</button></div>
+        </div>`;
+      }).join('');
+    }
+
+    // ===== Pagar =====
+    let currentPayItems = [];
+    function installmentText(e, ym) {
+      if (e.inst) return 'Parcela ' + (monthsBetween(e.start, ym) + 1) + '/' + e.inst;
+      return e.assinatura ? 'Assinatura' : 'Recorrente';
+    }
+    function pendingItems(ym) {
+      const items = [];
+      appState.expenses.forEach(e => {
+        if (e.cat !== 'cartao' && expenseActive(e, ym) && !isPaidMonth(e, ym)) {
+          items.push({ kind: 'fixo', id: e.id, desc: e.desc, sub: CAT_LABEL[e.cat] + ' · ' + installmentText(e, ym), val: e.val, assinatura: e.assinatura });
+        }
+      });
+      const inv = invoiceInfo(ym);
+      if (inv.pending > 0) items.push({ kind: 'fatura', id: 'fatura', desc: '💳 Fatura do cartão', sub: monthLabel(ym), val: inv.pending });
+      return items;
+    }
+    function quitarFatura(silent) {
+      const inv = invoiceInfo(viewMonth);
+      if (inv.pending <= 0) return false;
+      if (!silent && !confirm('Quitar a fatura de ' + monthLabel(viewMonth) + ' no valor de ' + fmt(inv.pending) + '?')) return false;
+      inv.buys.forEach(p => { p.pago = true; });
+      inv.cardFix.forEach(e => { if (!e.paidMonths.includes(viewMonth)) e.paidMonths.push(viewMonth); });
+      saveState();
+      if (!silent) updateCalculations();
+      return true;
+    }
+    function reabrirFatura() {
+      const inv = invoiceInfo(viewMonth);
+      inv.buys.forEach(p => { p.pago = false; });
+      inv.cardFix.forEach(e => { e.paidMonths = e.paidMonths.filter(m => m !== viewMonth); });
+      saveState(); updateCalculations();
+    }
+    function payFixo(id) {
+      const e = appState.expenses.find(x => x.id === id);
+      if (e && !e.paidMonths.includes(viewMonth)) e.paidMonths.push(viewMonth);
+    }
+    function unpayFixo(id) {
+      const e = appState.expenses.find(x => x.id === id); if (!e) return;
+      e.paidMonths = e.paidMonths.filter(m => m !== viewMonth);
+      saveState(); updateCalculations();
+    }
+    function paySelected() {
+      const checked = [...document.querySelectorAll('#payList input[type="checkbox"]:checked')].map(c => currentPayItems[Number(c.dataset.idx)]);
+      if (!checked.length) { alert('Marque ao menos uma conta para confirmar o pagamento.'); return; }
+      const total = checked.reduce((a, i) => a + i.val, 0);
+      if (!confirm('Confirmar pagamento de ' + checked.length + ' conta(s), total ' + fmt(total) + '?')) return;
+      checked.forEach(i => { if (i.kind === 'fatura') quitarFatura(true); else payFixo(i.id); });
+      saveState(); updateCalculations();
+    }
+    function renderInvoice() {
+      const inv = invoiceInfo(viewMonth);
+      $('invoiceMonth').textContent = monthLabel(viewMonth);
+      $('invoiceVal').textContent = fmt(inv.pending);
+      if (inv.count === 0) {
+        $('invoiceInfo').textContent = 'Nenhum gasto no cartão para este mês.';
+        $('btnQuitar').style.display = 'none'; $('btnReabrir').style.display = 'none';
+      } else if (inv.pending > 0) {
+        $('invoiceInfo').textContent = 'Fatura pendente com ' + inv.count + ' lançamento(s). Total da fatura: ' + fmt(inv.total) + '.';
+        $('btnQuitar').style.display = ''; $('btnReabrir').style.display = 'none';
+      } else {
+        $('invoiceInfo').textContent = '✅ Fatura quitada (' + inv.count + ' lançamento(s), ' + fmt(inv.total) + ').';
+        $('btnQuitar').style.display = 'none'; $('btnReabrir').style.display = '';
+      }
+    }
+    function renderPayList() {
+      currentPayItems = pendingItems(viewMonth);
+      const el = $('payList');
+      if (!currentPayItems.length) {
+        el.innerHTML = '<div class="empty">Nenhuma conta pendente neste mês 🎉</div>';
+        $('btnPaySelected').style.display = 'none';
+      } else {
+        $('btnPaySelected').style.display = '';
+        el.innerHTML = currentPayItems.map((item, index) => `
+          <div class="pay-item">
+            <input type="checkbox" id="chk_${index}" data-idx="${index}">
+            <div class="pay-info"><strong>${esc(item.desc)}${item.assinatura ? '<span class="tag">🔁 Assinatura</span>' : ''}</strong><span>${esc(item.sub)}</span></div>
+            <div class="pay-val" id="payVal_${index}">${fmt(item.val)}</div>
+          </div>`).join('');
+      }
+      const rows = [];
+      appState.expenses.forEach(e => {
+        if (e.cat !== 'cartao' && expenseActive(e, viewMonth) && isPaidMonth(e, viewMonth)) {
+          rows.push(`<div class="list-row"><div class="list-info"><strong>${esc(e.desc)}${e.assinatura ? '<span class="tag">🔁 Assinatura</span>' : ''}<span class="tag ok">✓ Pago</span></strong><span>${CAT_LABEL[e.cat]} · ${installmentText(e, viewMonth)}</span></div><div class="list-val">${fmt(e.val)}</div><button class="link-btn" onclick="unpayFixo('${e.id}')">Desfazer</button></div>`);
+        }
+      });
+      const inv = invoiceInfo(viewMonth);
+      if (inv.count > 0 && inv.pending <= 0) {
+        rows.push(`<div class="list-row"><div class="list-info"><strong>💳 Fatura do cartão<span class="tag ok">✓ Paga</span></strong><span>${monthLabel(viewMonth)}</span></div><div class="list-val">${fmt(inv.total)}</div></div>`);
+      }
+      $('paidList').innerHTML = rows.length ? rows.join('') : '<div class="empty">Nada pago ainda neste mês.</div>';
+      calculatePayable();
+    }
+    function calculatePayable() {
+      const cash = parseMoney($('availableCash').value) || 0;
+      let remaining = cash;
+      currentPayItems.forEach((item, index) => {
+        const valEl = $('payVal_' + index); if (!valEl) return;
+        if (cash > 0 && remaining >= item.val) { valEl.className = 'pay-val covered'; remaining -= item.val; }
+        else valEl.className = cash > 0 ? 'pay-val uncovered' : 'pay-val';
+      });
+    }
+
+    // ===== Listas =====
+    const PENCIL = '✏️';
+    function rowButtons(list, id, extra) {
+      return (extra || '') + `<button class="icon-btn" onclick="editItem('${list}','${id}')" aria-label="Editar">${PENCIL}</button><button class="icon-btn" onclick="removeItem('${list}','${id}')" aria-label="Excluir">✕</button>`;
+    }
+    function incomeSub(i) {
+      return i.transferFrom ? 'Sobra de ' + shortMonth(i.transferFrom) + ' · pontual em ' + shortMonth(i.month) : i.type === 'temp' ? 'Pontual · ' + shortMonth(i.month) : 'Recorrente desde ' + shortMonth(i.start) + (i.end ? ' · encerrada em ' + shortMonth(i.end) : '');
+    }
+    function expenseSub(e, ym) {
+      const act = expenseActive(e, ym);
+      return CAT_LABEL[e.cat] + ' · ' + (act ? installmentText(e, ym) : (e.inst ? e.inst + ' parcelas' : 'recorrente') + ' (inativo em ' + shortMonth(ym) + ')') + ' · desde ' + shortMonth(e.start) + (e.end ? ' · encerrado em ' + shortMonth(e.end) : '');
+    }
+    function purchaseSub(p) {
+      const [y, m, d] = p.date.split('-');
+      return d + '/' + m + '/' + y + (p.method === 'cartao' ? ' · fatura ' + shortMonth(p.targetMonth) : ' · à vista');
+    }
+    function purchaseTag(p) {
+      return p.method === 'cartao' ? (p.pago ? '<span class="tag ok">💳 Fatura paga</span>' : '<span class="tag warn">💳 Cartão</span>') : '<span class="tag ok">💵 À vista</span>';
+    }
+    function renderIncomeList() {
+      const el = $('incomeList');
+      if (!appState.incomes.length) { el.innerHTML = '<div class="empty">Nenhuma receita cadastrada.</div>'; return; }
+      el.innerHTML = appState.incomes.map(i => {
+        const endBtn = (i.type !== 'temp' && !i.end) ? `<button class="link-btn" onclick="endItem('incomes','${i.id}')">Encerrar</button>` : '';
+        return `<div class="list-row"><div class="list-info"><strong>${esc(i.desc)}${i.transferFrom ? '<span class="tag ok">↪ Sobra transferida</span>' : i.type === 'temp' ? '<span class="tag warn">⚡ Extra do mês</span>' : ''}</strong><span>${incomeSub(i)}</span></div><div class="list-val">${fmt(i.val)}</div>${rowButtons('incomes', i.id, endBtn)}</div>`;
+      }).join('');
+    }
+    function renderExpenseList() {
+      const el = $('expenseList');
+      if (!appState.expenses.length) { el.innerHTML = '<div class="empty">Nenhum gasto fixo cadastrado.</div>'; return; }
+      el.innerHTML = appState.expenses.map(e => {
+        const endBtn = (!e.inst && !e.end) ? `<button class="link-btn" onclick="endItem('expenses','${e.id}')">Encerrar</button>` : '';
+        return `<div class="list-row"><div class="list-info"><strong>${esc(e.desc)}${e.assinatura ? '<span class="tag">🔁 Assinatura</span>' : ''}</strong><span>${expenseSub(e, viewMonth)}</span></div><div class="list-val">${fmt(e.val)}</div>${rowButtons('expenses', e.id, endBtn)}</div>`;
+      }).join('');
+    }
+    function renderPurchaseList() {
+      const el = $('purchaseList');
+      const list = appState.purchases.filter(p => p.targetMonth === viewMonth);
+      if (!list.length) { el.innerHTML = '<div class="empty">Nenhum gasto neste mês.</div>'; return; }
+      el.innerHTML = list.map(p =>
+        `<div class="list-row"><div class="list-info"><strong>${purchaseTitle(p)}${purchaseTag(p)}</strong><span>${purchaseSub(p)}</span></div><div class="list-val">${fmt(p.val)}</div>${rowButtons('purchases', p.id)}</div>`).join('');
+    }
+    function renderSummary(c) {
+      const inv = invoiceInfo(viewMonth);
+      const rows = [['Receitas do mês', fmt(c.income)], ['Gastos fixos', fmt(c.fixosBucket)], ['Lazer / Cartão (gastos)', fmt(c.lazer)], ['Guardado em metas', fmt(c.reservado)]];
+      if (c.transferido > 0) rows.push(['Sobra transferida p/ o próximo mês', fmt(c.transferido)]);
+      rows.push(['Fatura do cartão pendente', fmt(inv.pending)], ['Saldo do mês', fmt(c.balance)]);
+      let html = rows.map(r => `<div class="list-row"><div class="list-info"><strong style="font-weight:500;">${r[0]}</strong></div><div class="list-val">${r[1]}</div></div>`).join('');
+      if (c.balance > 0.004) html += `<button class="btn btn-sobra" onclick="transferSurplus()">🚀 Transferir Sobra (${fmt(c.balance)}) para o Próximo Mês</button>`;
+      $('summaryRows').innerHTML = html;
+    }
+    function transferSurplus() {
+      const amount = computeMonth(viewMonth).balance;
+      if (!(amount > 0.004)) return;
+      const next = addMonths(viewMonth, 1);
+      if (!confirm('Transferir ' + fmt(amount) + ' de ' + monthLabel(viewMonth) + ' para ' + monthLabel(next) + ' como receita pontual?')) return;
+      appState.incomes.push({ id: uid(), desc: 'Sobra de ' + monthLabel(viewMonth), val: amount, type: 'temp', month: next, transferFrom: viewMonth });
+      saveState(); updateCalculations();
+    }
+
+    // ===== Buscar =====
+    function clearSearch() { ['sQuery', 'sMonth', 'sMin', 'sMax'].forEach(i => $(i).value = ''); $('sType').value = 'todos'; renderSearch(); }
+    function renderSearch() {
+      const q = ($('sQuery').value || '').toLowerCase().trim(), type = $('sType').value, month = $('sMonth').value;
+      const min = parseMoney($('sMin').value), max = parseMoney($('sMax').value);
+      const okVal = v => (isNaN(min) || v >= min) && (isNaN(max) || v <= max);
+      const okName = s => !q || s.toLowerCase().includes(q);
+      const rows = [];
+      if (type === 'todos' || type === 'incomes') appState.incomes.forEach(i => {
+        if (okName(i.desc) && okVal(i.val) && (!month || incomeActive(i, month)))
+          rows.push({ list: 'incomes', kind: 'Receita', cls: 'ok', id: i.id, title: esc(i.desc), sub: incomeSub(i), val: i.val, sort: i.type === 'temp' ? i.month : i.start, inflow: true });
+      });
+      if (type === 'todos' || type === 'expenses') appState.expenses.forEach(e => {
+        if (okName(e.desc) && okVal(e.val) && (!month || expenseActive(e, month)))
+          rows.push({ list: 'expenses', kind: 'Fixo', cls: '', id: e.id, title: esc(e.desc) + (e.assinatura ? '<span class="tag">🔁 Assinatura</span>' : ''), sub: expenseSub(e, month || viewMonth), val: e.val, sort: e.start });
+      });
+      if (type === 'todos' || type === 'purchases') appState.purchases.forEach(p => {
+        if (okName(p.desc) && okVal(p.val) && (!month || p.targetMonth === month))
+          rows.push({ list: 'purchases', kind: 'Gasto', cls: 'warn', id: p.id, title: purchaseTitle(p), sub: purchaseSub(p), val: p.val, sort: p.date });
+      });
+      rows.sort((a, b) => String(b.sort).localeCompare(String(a.sort)));
+      const inc = rows.filter(r => r.inflow).reduce((a, r) => a + r.val, 0);
+      const out = rows.filter(r => !r.inflow).reduce((a, r) => a + r.val, 0);
+      $('searchTotals').textContent = rows.length + ' resultado(s) · Receitas: ' + fmt(inc) + ' · Gastos: ' + fmt(out);
+      $('searchList').innerHTML = rows.length ? rows.map(r =>
+        `<div class="list-row"><div class="list-info"><strong>${r.title}<span class="tag ${r.cls}">${r.kind}</span></strong><span>${r.sub}</span></div><div class="list-val">${fmt(r.val)}</div>${rowButtons(r.list, r.id)}</div>`).join('')
+        : '<div class="empty">Nenhum lançamento encontrado.</div>';
+    }
+
+    // ===== Histórico de meses =====
+    let extraFutureMonths = 0;
+    function longestEndMonth() {
+      const now = ymNow();
+      let end = addMonths(now, 6);
+      appState.expenses.forEach(e => {
+        if (e.inst) { const x = addMonths(e.start, e.inst - 1); if (x > end) end = x; }
+        if (e.end && e.end > end) end = e.end;
+      });
+      appState.purchases.forEach(p => { if (p.targetMonth > end) end = p.targetMonth; });
+      const cap = addMonths(now, 240);
+      return end > cap ? cap : end;
+    }
+    function earliestMonth() {
+      let min = ymNow();
+      appState.incomes.forEach(i => { const m = i.type === 'temp' ? i.month : i.start; if (m && m < min) min = m; });
+      appState.expenses.forEach(e => { if (e.start < min) min = e.start; });
+      appState.purchases.forEach(p => { if (p.targetMonth < min) min = p.targetMonth; });
+      return min;
+    }
+    function monthItemHTML(ym, cls, tag) {
+      const bal = computeMonth(ym).balance;
+      const pos = bal >= -0.004;
+      return `<button class="month-item ${cls}${ym === viewMonth ? ' viewing' : ''}" onclick="goMonth('${ym}')">
+        <span>${monthLabel(ym)}${tag ? '<span class="mtag">' + tag + '</span>' : ''}</span>
+        <span class="pill ${pos ? 'pos' : 'neg'}">${pos ? '+' : '-'}${fmt(Math.abs(bal))}</span></button>`;
+    }
+    function loadMoreMonths() { extraFutureMonths += 12; renderMonthList(); }
+    function renderMonthList() {
+      const now = ymNow();
+      $('monthCurrent').innerHTML = monthItemHTML(now, 'current', 'atual');
+      const limit = addMonths(longestEndMonth(), extraFutureMonths);
+      let fut = '';
+      for (let ym = addMonths(now, 1); ym <= limit; ym = addMonths(ym, 1)) fut += monthItemHTML(ym, 'future', '');
+      $('monthFuture').innerHTML = fut;
+      $('btnMoreMonths').textContent = 'Carregar mais meses (após ' + shortMonth(limit) + ')';
+      let past = '';
+      const first = earliestMonth();
+      for (let ym = addMonths(now, -1); ym >= first; ym = addMonths(ym, -1)) past += monthItemHTML(ym, 'past', '');
+      $('monthPast').innerHTML = past || '<div class="empty">Nenhum mês anterior com lançamentos.</div>';
+    }
+
+    // ===== Simulador =====
+    function runSimulation() {
+      const total = parseMoney($('simTotal').value);
+      const n = Math.max(1, parseInt($('simParcelas').value) || 1);
+      const res = $('simResult');
+      if (!(total > 0)) { res.innerHTML = '<span style="color:var(--danger)">Informe o valor total da compra.</span>'; return; }
+      const parcelas = splitInstallments(total, n);
+      let worst = null;
+      parcelas.forEach((v, k) => {
+        const ym = addMonths(viewMonth, k), after = computeMonth(ym).balance - v;
+        if (!worst || after < worst.after) worst = { ym, after, v, before: after + v };
+      });
+      const label = n > 1 ? n + 'x de ' + fmt(parcelas[0]) : fmt(total);
+      if (worst.after >= 0) {
+        res.innerHTML = `<span style="color:var(--success)">✅ <strong>Cabe!</strong> ${label}. ${n > 1 ? 'No mês mais apertado (' + monthLabel(worst.ym) + ')' : 'Em ' + monthLabel(worst.ym)} o saldo de ${fmt(worst.before)} ficaria em <strong>${fmt(worst.after)}</strong>, sem negativar.</span>`;
+      } else {
+        res.innerHTML = `<span style="color:var(--danger)">⚠️ <strong>Não cabe.</strong> ${label}. Em ${monthLabel(worst.ym)} o saldo de ${fmt(worst.before)} ficaria <strong>${fmt(worst.after)}</strong> (faltam ${fmt(-worst.after)}).</span>`;
+      }
+      res.innerHTML += '<br><span style="color:var(--text-muted);font-size:11px;">Considera as receitas e gastos já cadastrados em cada mês, a partir de ' + monthLabel(viewMonth) + '.</span>';
+    }
+
+    // ===== Lembretes e notificações =====
+    function showToast(title, body) {
+      const el = $('toastApp');
+      el.innerHTML = '<strong>' + esc(title) + '</strong>' + esc(body || '');
+      el.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => el.classList.remove('show'), 7000);
+    }
+    function updateNotifStatus() {
+      let t;
+      if (!('Notification' in window)) t = 'Este navegador não oferece notificações. No iPhone (iOS 16.4+), adicione o app à Tela de Início, abra pelo ícone e toque em Ativar de novo.';
+      else if (Notification.permission === 'granted') t = '✅ Notificações ativadas. Toque no botão para enviar um teste.';
+      else if (Notification.permission === 'denied') t = '🚫 Bloqueadas. Ative em Ajustes do iPhone > Notificações > este app.';
+      else t = 'Notificações ainda não ativadas neste aparelho.';
+      $('notifStatus').textContent = t;
+    }
+    async function sendNotification(title, body, tag) {
+      showToast(title, body);
+      if (!('Notification' in window) || Notification.permission !== 'granted') return false;
+      try {
+        if ('serviceWorker' in navigator) {
+          const reg = await navigator.serviceWorker.getRegistration();
+          if (reg && reg.showNotification) { await reg.showNotification(title, { body, tag }); return true; }
+        }
+      } catch (e) {}
+      try { new Notification(title, { body, tag }); return true; } catch (e) { return false; }
+    }
+    async function enableNotifications() {
+      if (!('Notification' in window)) {
+        alert('Seu navegador não oferece notificações aqui.\n\nNo iPhone: use iOS 16.4+, toque em Compartilhar > "Adicionar à Tela de Início", abra o app pelo ícone e toque em Ativar de novo.');
+        updateNotifStatus(); return;
+      }
+      if (Notification.permission === 'granted') { await sendNotification('🔔 Teste', 'As notificações do Topaz Finance estão funcionando.', 'teste'); updateNotifStatus(); return; }
+      if (Notification.permission === 'denied') { alert('As notificações estão bloqueadas. Ative em Ajustes do iPhone > Notificações > este app e tente de novo.'); updateNotifStatus(); return; }
+      try {
+        const perm = await Notification.requestPermission();
+        updateNotifStatus();
+        if (perm === 'granted') { await sendNotification('🔔 Notificações ativadas', 'Você será avisado dos seus lembretes.', 'ativado'); checkReminders(); }
+        else alert('Permissão não concedida. Para ativar depois: Ajustes do iPhone > Notificações > este app.');
+      } catch (e) { alert('Não foi possível pedir a permissão agora. No iPhone, confirme que abriu o app pelo ícone da Tela de Início.'); }
+    }
+    function readFired() {
+      try { const o = JSON.parse(localStorage.getItem(NOTIF_KEY) || '{}'); return o.day === todayISO() ? o : { day: todayISO(), done: [] }; }
+      catch (e) { return { day: todayISO(), done: [] }; }
+    }
+    function markFired(key) {
+      const o = readFired(); if (!o.done.includes(key)) o.done.push(key);
+      try { localStorage.setItem(NOTIF_KEY, JSON.stringify(o)); } catch (e) {}
+    }
+    function checkReminders() {
+      const d = new Date(), nowMin = d.getHours() * 60 + d.getMinutes(), done = readFired().done;
+      appState.lembretes.forEach(l => {
+        if (!l.active || !l.time || done.includes(l.id)) return;
+        const [h, m] = l.time.split(':').map(Number), diff = nowMin - (h * 60 + m);
+        if (diff < 0 || diff > 30) return;
+        markFired(l.id);
+        sendNotification('⏰ ' + l.title, 'Lembrete das ' + l.time, 'rem-' + l.id);
+      });
+    }
+    function addReminder() {
+      const title = $('remTitle').value.trim(), time = $('remTime').value;
+      if (!title || !time) { alert('Informe o título e o horário do lembrete.'); return; }
+      appState.lembretes.push({ id: uid(), title, time, active: true });
+      saveState(); $('remTitle').value = ''; updateCalculations(); checkReminders();
+    }
+    function toggleReminder(id) { const l = appState.lembretes.find(x => x.id === id); if (l) { l.active = !l.active; saveState(); updateCalculations(); } }
+    function editReminder(id) {
+      const l = appState.lembretes.find(x => x.id === id); if (!l) return;
+      openModal('Editar lembrete', field('Título', `<input type="text" id="m_title" value="${esc(l.title)}">`) + field('Horário', `<input type="time" id="m_time" value="${l.time}">`), () => {
+        const title = $('m_title').value.trim(), time = $('m_time').value;
+        if (!title || !time) { alert('Preencha título e horário.'); return false; }
+        l.title = title; l.time = time; saveState(); updateCalculations();
+      });
+    }
+    function removeReminder(id) {
+      const l = appState.lembretes.find(x => x.id === id); if (!l) return;
+      if (!confirm('Excluir o lembrete "' + l.title + '"?')) return;
+      appState.lembretes = appState.lembretes.filter(x => x.id !== id); saveState(); updateCalculations();
+    }
+    function renderReminders() {
+      const el = $('reminderList');
+      const list = appState.lembretes.slice().sort((a, b) => a.time.localeCompare(b.time));
+      el.innerHTML = list.length ? list.map(l => `<div class="list-row"><div class="list-info"><strong>${esc(l.title)}</strong><span>⏰ ${l.time}</span></div>
+        <input type="checkbox" class="switch" ${l.active ? 'checked' : ''} onchange="toggleReminder('${l.id}')" aria-label="Ativar ou desativar">
+        <button class="icon-btn" onclick="editReminder('${l.id}')" aria-label="Editar">${PENCIL}</button>
+        <button class="icon-btn" onclick="removeReminder('${l.id}')" aria-label="Excluir">✕</button></div>`).join('') : '<div class="empty">Nenhum lembrete cadastrado.</div>';
+    }
+
+    // ===== Cálculo principal (card do topo) =====
+    function updateCalculations() {
+      const c = computeMonth(viewMonth);
+      $('currentMonthYear').innerText = monthLabel(viewMonth);
+      const bal = $('dispBalance');
+      bal.innerText = fmt(c.balance);
+      bal.style.color = c.balance >= 0 ? 'var(--success)' : 'var(--danger)';
+
+      const setSlice = (sliceId, fillId, used, target) => {
+        const pct = target > 0 ? Math.min(100, (used / target) * 100) : 0;
+        $(fillId).style.width = Math.max(0, pct) + '%';
+        $(sliceId).className = $(sliceId).className.replace(' over', '') + (target > 0 && used > target ? ' over' : '');
+      };
+      setSlice('sliceFixo', 'fillFixo', c.fixosBucket, c.t50);
+      setSlice('sliceLazer', 'fillLazer', c.lazer, c.t35);
+      setSlice('sliceReserva', 'fillReserva', c.reservado, c.t15);
+
+      const set = (id, used, target, overCheck) => {
+        const el = $(id); el.innerText = fmt0(used) + ' / ' + fmt0(target);
+        el.className = overCheck && used > target ? 'over' : '';
+      };
+      set('valFixoPct', c.fixosBucket, c.t50, true);
+      set('valCartaoPct', c.lazer, c.t35, true);
+      set('valReservaPct', c.reservado, c.t15, false);
+
+      renderSummary(c); renderIncomeList(); renderExpenseList(); renderPurchaseList();
+      renderInvoice(); renderPayList(); renderSearch(); renderMetas(); renderReminders(); renderMonthList();
+      updateNotifStatus();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      syncFormDefaults(true);
+      updateCalculations();
+      checkReminders();
+      setInterval(checkReminders, 60000);
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) checkReminders(); });
+    });
+  </script>
+</body>
+</html>
